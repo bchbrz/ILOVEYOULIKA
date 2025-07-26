@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    max-width: 100%;
+    margin-top: auto;
+    margin-left: auto;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+  }
+  
+ 
+  img {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+  .container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 30px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+    animation: heartbeat 1.5s ease-in-out infinite, rotate3D 5s infinite linear;
+  }
+  
+  .heart.explode {
+    animation: explodeHeart 1s forwards;
+  }
+  
+  .mini-heart {
+    position: absolute;
+    font-size: 24px;
+    color: #ff0000;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+  }
+  
+  .heart:hover {
+    transform: scale(1.2);
+  }
+  
+  
+  .heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  
+  .message {
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  .floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .floating-heart {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: float 6s linear infinite;
+  }
+  
+  .sub-message {
+    color: white;
+    font-size: 1.2em;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle 1.5s linear forwards;
+  }
+  
+  .butterfly {
+    position: absolute;
+    font-size: 24px;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    z-index: 2;
+  }
+  
+  .music-note {
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    opacity: 0;
+    animation: floatNote 3s linear forwards;
+  }
+  
+  .glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,182,193,0.4) 0%, rgba(255,182,193,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  
+  @keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes sparkle {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(180deg);
+        opacity: 0;
+    }
+  }
+  
+  @keyframes floatNote {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+  }
+  
+  
+  @keyframes explodeHeart {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+  
+  @keyframes miniHeartFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
+        opacity: 0;
+    }
+  }
+  
+  
+  
+  .buttons { 
+
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  } 
+   
+  .yes-button { 
+    font-size: 1.5em; 
+    padding: 10px 20px; 
+    margin-right: 10px; 
+    background-color: #4caf50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  } 
+   
+  .no-button { 
+    font-size: 1.5em; 
+    padding: 10px 20px; 
+    background-color: #f44336; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+  } 
+
+  .Fis1 {
+    position: absolute;
+    width: 120px;
+    max-width: 100%;
+    padding-top: 30px;
+    margin-left: 70px;
+    margin-top: 201px;
+
+    animation: fadeIn 2s ease-in-out forwards
+  }
+  .Fis2 {
+    position: absolute;
+    width: 300px;
+    max-width: 100%;
+    padding-top: 30px;
+    margin-left: -12%;
+    animation: fadeIn 2s ease-in-out forwards
+  }
+  .Fis3 {
+    position: absolute;
+    width: 150px;
+    max-width: 100%;
+    padding-top: 30px;
+    margin-left: 40px;
+    animation: fadeIn 2s ease-in-out forwards
+  }
